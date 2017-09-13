@@ -13,7 +13,7 @@ Sudo::Sudo()
 
 }
 
-void Sudo::pro_sudoku(int i, int j, int z)
+void Sudo::pro_sudoku(int i, int j, int t)
 {
 	if (j < 0)
 	{
@@ -45,12 +45,13 @@ void Sudo::pro_sudoku(int i, int j, int z)
 	}
 	else if (i < 9)
 	{
-		for (int kk = 1; kk<9; kk++) {
-			int n = (z++) % 9 + 1;
+		for (int k = 1; k<9; k++) 
+		{
+			int n = (t++) % 9 + 1;
 			if (judge(i, j, n))
 			{
 				sudoku[i][j] = n;
-				pro_sudoku(i, j + 1, z);
+				pro_sudoku(i, j + 1, t);
 				sudoku[i][j] = 0;
 			}
 		}
